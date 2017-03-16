@@ -11,6 +11,7 @@ import { By } from '@angular/platform-browser';
   import { RouterLinkStubDirective }   from '../testing';
   import { RouterOutletStubComponent } from '../testing';
 
+
   @Component({selector: 'app-welcome', template: ''})
   class WelcomeStubComponent {}
 
