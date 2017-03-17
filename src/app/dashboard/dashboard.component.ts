@@ -12,6 +12,7 @@ import { Hero, HeroService } from '../model';
 export class DashboardComponent implements OnInit {
 
   heroes: Hero[] = [];
+  selectedHero: Hero;
 
   constructor(
     private router: Router,
@@ -23,9 +24,8 @@ export class DashboardComponent implements OnInit {
       .then(heroes => this.heroes = heroes.slice(1, 5));
   }
 
-  gotoDetail(hero: Hero) {
-    let url = `/heroes/${hero.id}`;
-    this.router.navigateByUrl(url);
+  gotoDetail() {
+    this.router.navigate(['/detail', this.selectedHero.id]);
   }
 
   get title() {
