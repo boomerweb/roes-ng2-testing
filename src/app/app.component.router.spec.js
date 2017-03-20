@@ -28,7 +28,13 @@ describe('AppComponent & RouterTestingModule', function () {
     }));
     it('should navigate to "Dashboard" immediately', testing_1.fakeAsync(function () {
         createComponent();
+        console.log(location.path());
         expect(location.path()).toEqual('/dashboard', 'after initialNavigation()');
+        expectElementOf(dashboard_hero_component_1.DashboardHeroComponent);
+    }));
+    it('should navigate to "Dashboard" immediately', testing_1.fakeAsync(function () {
+        createComponent();
+        expect(location.path()).toEqual('', 'after initialNavigation()');
         expectElementOf(dashboard_hero_component_1.DashboardHeroComponent);
     }));
     it('should navigate to "About" on click', testing_1.fakeAsync(function () {

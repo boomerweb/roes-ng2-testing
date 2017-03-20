@@ -1,10 +1,9 @@
 "use strict";
-// re-export for tester convenience
 var hero_1 = require('../hero');
 exports.Hero = hero_1.Hero;
-var hero_service_1 = require('../hero.service');
-exports.HeroService = hero_service_1.HeroService;
 var hero_2 = require('../hero');
+require('rxjs/add/operator/toPromise');
+//import Promise = Q.Promise;
 exports.HEROES = [
     new hero_2.Hero(41, 'Bob'),
     new hero_2.Hero(42, 'Carol'),

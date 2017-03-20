@@ -1,9 +1,11 @@
 // re-export for tester convenience
+import {Http, Headers} from "@angular/http";
 export { Hero }        from '../hero';
-export { HeroService } from '../hero.service';
-
 import { Hero }        from '../hero';
 import { HeroService } from '../hero.service';
+
+import 'rxjs/add/operator/toPromise';
+//import Promise = Q.Promise;
 
 export var HEROES: Hero[] = [
   new Hero(41, 'Bob'),
@@ -15,6 +17,7 @@ export var HEROES: Hero[] = [
 ];
 
 export class FakeHeroService implements HeroService {
+
 
   heroes = HEROES.map(h => h.clone());
   lastPromise: Promise<any>;  // remember so we can spy on promise calls

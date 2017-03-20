@@ -4,16 +4,20 @@ import {Http, Headers} from "@angular/http";
 import 'rxjs/add/operator/toPromise';
 
 import { Hero }       from './hero';
+import {HEROES} from "./test-heroes";
 //import { HEROES }     from './test-heroes';
 
+let heroesUrl = 'api/heroes';  // URL to web api waar de heroes van geladen worden
+let headers = new Headers({'Content-Type': 'application/json'});
+//let http = new Http();
 @Injectable()
 /** Dummy HeroService. Pretend it makes real http requests */
 export class HeroService {
 
-  private heroesUrl = 'api/heroes';  // URL to web api waar de heroes van geladen worden
-  private headers = new Headers({'Content-Type': 'application/json'});
+  //private heroesUrl = 'api/heroes';  // URL to web api waar de heroes van geladen worden
+  //private headers = new Headers({'Content-Type': 'application/json'});
 
-  constructor(private http: Http){}
+  constructor(){}
 
 
   // getHeroes() {
@@ -50,13 +54,16 @@ export class HeroService {
    * Haalt een set van heroes op
    * @returns {Promise<Hero[]>}
    */
-  getHeroes(): Promise<Hero[]> {
-    return this.http.get(this.heroesUrl)
-        .toPromise()
-        .then(response => response.json().data as Hero[]) // call the json method of the HTTP Response to extract the data within the response
-        .catch(this.handleError); //catch server failures and pass them to an error handler:
-  }
+  // getHeroes(): Promise<Hero[]> {
+  //   return this.http.get(this.heroesUrl)
+  //       .toPromise()
+  //       .then(response => response.json().data as Hero[]) // call the json method of the HTTP Response to extract the data within the response
+  //       .catch(this.handleError); //catch server failures and pass them to an error handler:
+  // }
 
+  getHeroes() {
+    return Promise.resolve(HEROES);
+  }
 
   /**
    * Deleten van een hero
@@ -64,8 +71,8 @@ export class HeroService {
    * @returns {Promise<TResult|T>}
    */
   delete(id: number): Promise<void> {
-    const url = `${this.heroesUrl}/${id}`;
-    return this.http.delete(url, {headers: this.headers})
+    const url = `${heroesUrl}/${id}`;
+    return this.http.delete(url, {headers: headers})
         .toPromise()
         .then(() => null)
         .catch(this.handleError);
@@ -79,7 +86,7 @@ export class HeroService {
    */
   create(name: string): Promise<Hero> {
     return this.http
-        .post(this.heroesUrl, JSON.stringify({name: name}), {headers: this.headers})
+        .post(heroesUrl, JSON.stringify({name: name}), {headers: headers})
         .toPromise()
         .then(res => res.json().data)
         .catch(this.handleError);

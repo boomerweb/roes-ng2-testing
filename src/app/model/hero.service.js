@@ -11,12 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require("@angular/http");
 require('rxjs/add/operator/toPromise');
+var test_heroes_1 = require("./test-heroes");
 //import { HEROES }     from './test-heroes';
+var heroesUrl = 'api/heroes'; // URL to web api waar de heroes van geladen worden
+var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+//let http = new Http();
 var HeroService = (function () {
-    function HeroService(http) {
-        this.http = http;
-        this.heroesUrl = 'api/heroes'; // URL to web api waar de heroes van geladen worden
-        this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+    //private heroesUrl = 'api/heroes';  // URL to web api waar de heroes van geladen worden
+    //private headers = new Headers({'Content-Type': 'application/json'});
+    function HeroService() {
     }
     // getHeroes() {
     //   return Promise.resolve(HEROES);
@@ -47,11 +50,14 @@ var HeroService = (function () {
      * Haalt een set van heroes op
      * @returns {Promise<Hero[]>}
      */
+    // getHeroes(): Promise<Hero[]> {
+    //   return this.http.get(this.heroesUrl)
+    //       .toPromise()
+    //       .then(response => response.json().data as Hero[]) // call the json method of the HTTP Response to extract the data within the response
+    //       .catch(this.handleError); //catch server failures and pass them to an error handler:
+    // }
     HeroService.prototype.getHeroes = function () {
-        return this.http.get(this.heroesUrl)
-            .toPromise()
-            .then(function (response) { return response.json().data; }) // call the json method of the HTTP Response to extract the data within the response
-            .catch(this.handleError); //catch server failures and pass them to an error handler:
+        return Promise.resolve(test_heroes_1.HEROES);
     };
     /**
      * Deleten van een hero
@@ -59,8 +65,8 @@ var HeroService = (function () {
      * @returns {Promise<TResult|T>}
      */
     HeroService.prototype.delete = function (id) {
-        var url = this.heroesUrl + "/" + id;
-        return this.http.delete(url, { headers: this.headers })
+        var url = heroesUrl + "/" + id;
+        return this.http.delete(url, { headers: headers })
             .toPromise()
             .then(function () { return null; })
             .catch(this.handleError);
@@ -72,7 +78,7 @@ var HeroService = (function () {
      */
     HeroService.prototype.create = function (name) {
         return this.http
-            .post(this.heroesUrl, JSON.stringify({ name: name }), { headers: this.headers })
+            .post(heroesUrl, JSON.stringify({ name: name }), { headers: headers })
             .toPromise()
             .then(function (res) { return res.json().data; })
             .catch(this.handleError);
@@ -103,7 +109,7 @@ var HeroService = (function () {
     };
     HeroService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
+        __metadata('design:paramtypes', [])
     ], HeroService);
     return HeroService;
 }());
