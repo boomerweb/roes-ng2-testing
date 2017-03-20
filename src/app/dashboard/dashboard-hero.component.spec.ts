@@ -34,6 +34,7 @@ describe('DashboardHeroComponent when tested directly', () => {
 
     // pretend that it was wired to something that supplied a hero
     expectedHero = new Hero(42, 'Test Name');
+    console.log(expectedHero);
     comp.hero = expectedHero;
     fixture.detectChanges(); // trigger initial data binding
   });

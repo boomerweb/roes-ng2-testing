@@ -8,47 +8,46 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var model_1 = require('../model');
-var router_1 = require("@angular/router");
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var model_1 = require("../model");
 var DashboardHeroComponent = (function () {
-    function DashboardHeroComponent(router) {
-        this.router = router;
+    function DashboardHeroComponent() {
         this.selected = new core_1.EventEmitter();
+        //selectedHero: Hero;
+        // constructor(private router: Router) {
+        // }
+        // gotoDetail(): void {
+        //   this.router.navigate(['/detail', this.selectedHero.id]);
+        // }
+        //
+        // onSelect(hero: Hero): void {
+        //   this.selectedHero = hero;
+        //   this.gotoDetail();
+        // }
+        // click() {
+        //   let x = this.selected.mapTo(hero => hero as Hero);
+        //   console.log(x);
+        //   this.selected.emit(this.hero);
+        // }
     }
-    /**
-     * navigeer naar detail pagina van een hero
-     */
-    DashboardHeroComponent.prototype.gotoDetail = function () {
-        this.router.navigate(['/detail', this.selectedHero.id]);
-    };
-    DashboardHeroComponent.prototype.onSelect = function (hero) {
-        this.selectedHero = hero;
-        this.gotoDetail();
-    };
-    DashboardHeroComponent.prototype.click = function () {
-        var x = this.selected.mapTo(function (hero) { return hero; });
-        console.log(x);
-        //this.selected.emit(this.hero); }
-    };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', model_1.Hero)
-    ], DashboardHeroComponent.prototype, "hero", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
-    ], DashboardHeroComponent.prototype, "selected", void 0);
-    DashboardHeroComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'dashboard-hero',
-            templateUrl: './dashboard-hero.component.html',
-            styleUrls: ['./dashboard-hero.component.css']
-        }), 
-        __metadata('design:paramtypes', [router_1.Router])
-    ], DashboardHeroComponent);
+    DashboardHeroComponent.prototype.click = function () { this.selected.emit(this.hero); };
     return DashboardHeroComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", model_1.Hero)
+], DashboardHeroComponent.prototype, "hero", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], DashboardHeroComponent.prototype, "selected", void 0);
+DashboardHeroComponent = __decorate([
+    core_1.Component({
+        selector: 'dashboard-hero',
+        templateUrl: './dashboard-hero.component.html',
+        styleUrls: ['./dashboard-hero.component.css']
+    })
+], DashboardHeroComponent);
 exports.DashboardHeroComponent = DashboardHeroComponent;
 //# sourceMappingURL=dashboard-hero.component.js.map

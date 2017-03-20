@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 @Component({
+  moduleId: module.id,
   template: `
   <h2 highlight="skyblue">About</h2>
   <twain-quote></twain-quote>

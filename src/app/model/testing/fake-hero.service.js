@@ -1,10 +1,11 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // re-export for tester convenience
-var hero_1 = require('../hero');
+var hero_1 = require("../hero");
 exports.Hero = hero_1.Hero;
-var hero_service_1 = require('../hero.service');
+var hero_service_1 = require("../hero.service");
 exports.HeroService = hero_service_1.HeroService;
-var hero_2 = require('../hero');
+var hero_2 = require("../hero");
 exports.HEROES = [
     new hero_2.Hero(41, 'Bob'),
     new hero_2.Hero(42, 'Carol'),

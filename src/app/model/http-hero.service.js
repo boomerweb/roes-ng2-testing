@@ -8,14 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-var http_2 = require('@angular/http');
-var Observable_1 = require('rxjs/Observable');
-require('rxjs/add/observable/throw');
-require('rxjs/add/operator/do');
-require('rxjs/add/operator/catch');
-require('rxjs/add/operator/map');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+var http_2 = require("@angular/http");
+var Observable_1 = require("rxjs/Observable");
+require("rxjs/add/observable/throw");
+require("rxjs/add/operator/do");
+require("rxjs/add/operator/catch");
+require("rxjs/add/operator/map");
 var HttpHeroService = (function () {
     function HttpHeroService(http) {
         this.http = http;
@@ -60,11 +61,11 @@ var HttpHeroService = (function () {
         console.error(errMsg); // log to console instead
         return Observable_1.Observable.throw(errMsg);
     };
-    HttpHeroService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], HttpHeroService);
     return HttpHeroService;
 }());
+HttpHeroService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], HttpHeroService);
 exports.HttpHeroService = HttpHeroService;
 //# sourceMappingURL=http-hero.service.js.map

@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
 
 import { Hero, HeroService } from '../model';
-
+//selector: 'app-dashboard
 @Component({
-  moduleId: module.id,
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: [ './dashboard.component.css' ]
@@ -12,7 +11,7 @@ import { Hero, HeroService } from '../model';
 export class DashboardComponent implements OnInit {
 
   heroes: Hero[] = [];
-  selectedHero: Hero;
+  //selectedHero: Hero;
 
   constructor(
     private router: Router,
@@ -24,8 +23,11 @@ export class DashboardComponent implements OnInit {
       .then(heroes => this.heroes = heroes.slice(1, 5));
   }
 
-  gotoDetail() {
-    this.router.navigate(['/detail', this.selectedHero.id]);
+  gotoDetail(hero: Hero) {
+    let url = `/heroes/${hero.id}`;
+    this.router.navigateByUrl(url);
+
+    //this.router.navigate(['/detail', this.selectedHero.id]);
   }
 
   get title() {

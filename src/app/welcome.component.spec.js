@@ -1,8 +1,9 @@
 "use strict";
-var testing_1 = require('@angular/core/testing');
-var platform_browser_1 = require('@angular/platform-browser');
-var model_1 = require('./model');
-var welcome_component_1 = require('./welcome.component');
+Object.defineProperty(exports, "__esModule", { value: true });
+var testing_1 = require("@angular/core/testing");
+var platform_browser_1 = require("@angular/platform-browser");
+var model_1 = require("./model");
+var welcome_component_1 = require("./welcome.component");
 describe('WelcomeComponent', function () {
     var comp;
     var fixture;

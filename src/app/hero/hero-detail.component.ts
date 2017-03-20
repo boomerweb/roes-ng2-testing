@@ -23,8 +23,7 @@ export class HeroDetailComponent implements OnInit {
   constructor(
     private heroDetailService: HeroDetailService,
     private route:  ActivatedRoute,
-    private router: Router,
-    private location: Location) {
+    private router: Router) {
   }
 
 
@@ -33,9 +32,9 @@ export class HeroDetailComponent implements OnInit {
     this.route.params.subscribe(p => this.getHero(p && p['id']));
   }
 
-  goBack(): void {
-    this.location.back();
-  }
+  // goBack(): void {
+  //   this.location.back();
+  // }
 
 
   private getHero(id: string): void {
@@ -59,7 +58,7 @@ export class HeroDetailComponent implements OnInit {
    * Ga daarna terug naar het vorige scherm.
    */
   save(): void {
-    this.heroDetailService.saveHero(this.hero).then(() => this.goBack());
+    this.heroDetailService.saveHero(this.hero).then(() => this.gotoList());
   }
 
   cancel() { this.gotoList(); }

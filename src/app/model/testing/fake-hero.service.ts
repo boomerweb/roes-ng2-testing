@@ -34,8 +34,9 @@ export class FakeHeroService implements HeroService {
   updateHero(hero: Hero): Promise<Hero> {
     return this.lastPromise = this.getHero(hero.id).then(h => {
       return h ?
-        Object.assign(h, hero) :
-        Promise.reject(`Hero ${hero.id} not found`) as any as Promise<Hero>;
+          Object.assign(h, hero) :
+          Promise.reject(`Hero ${hero.id} not found`) as any as Promise<Hero>;
     });
   }
 }
+

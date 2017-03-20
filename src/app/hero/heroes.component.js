@@ -8,9 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var hero_service_1 = require('../model/hero.service');
-var router_1 = require('@angular/router');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var hero_service_1 = require("../model/hero.service");
+var router_1 = require("@angular/router");
 var HeroesComponent = (function () {
     /**
      * Maakt een heroservice instantie aan bij initialisatie van de main app component
@@ -69,16 +70,17 @@ var HeroesComponent = (function () {
             _this.selectedHero = null;
         });
     };
-    HeroesComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'my-heroes',
-            templateUrl: './heroes.component.html',
-            styleUrls: ['./heroes.component.css']
-        }), 
-        __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.Router])
-    ], HeroesComponent);
     return HeroesComponent;
 }());
+HeroesComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'my-heroes',
+        templateUrl: './heroes.component.html',
+        styleUrls: ['./heroes.component.css']
+    }),
+    __metadata("design:paramtypes", [hero_service_1.HeroService,
+        router_1.Router])
+], HeroesComponent);
 exports.HeroesComponent = HeroesComponent;
 //# sourceMappingURL=heroes.component.js.map
