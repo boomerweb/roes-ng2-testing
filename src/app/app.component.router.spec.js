@@ -1,20 +1,19 @@
 // For more examples:
 //   https://github.com/angular/angular/blob/master/modules/@angular/router/test/integration.spec.ts
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var testing_1 = require("@angular/core/testing");
-var testing_2 = require("@angular/router/testing");
-var testing_3 = require("../testing");
+var testing_1 = require('@angular/core/testing');
+var testing_2 = require('@angular/router/testing');
+var testing_3 = require('../testing');
 // r - for relatively obscure router symbols
-var r = require("@angular/router");
-var router_1 = require("@angular/router");
-var platform_browser_1 = require("@angular/platform-browser");
-var common_1 = require("@angular/common");
-var app_module_1 = require("./app.module");
-var app_component_1 = require("./app.component");
-var about_component_1 = require("./about.component");
-var dashboard_hero_component_1 = require("./dashboard/dashboard-hero.component");
-var twain_service_1 = require("./shared/twain.service");
+var r = require('@angular/router');
+var router_1 = require('@angular/router');
+var platform_browser_1 = require('@angular/platform-browser');
+var common_1 = require('@angular/common');
+var app_module_1 = require('./app.module');
+var app_component_1 = require('./app.component');
+var about_component_1 = require('./about.component');
+var dashboard_hero_component_1 = require('./dashboard/dashboard-hero.component');
+var twain_service_1 = require('./shared/twain.service');
 var comp;
 var fixture;
 var page;
@@ -62,9 +61,9 @@ describe('AppComponent & RouterTestingModule', function () {
     }));
 });
 ///////////////
-var core_1 = require("@angular/core");
-var hero_module_1 = require("./hero/hero.module"); // should be lazy loaded
-var hero_list_component_1 = require("./hero/hero-list.component");
+var core_1 = require('@angular/core');
+var hero_module_1 = require('./hero/hero.module'); // should be lazy loaded
+var hero_list_component_1 = require('./hero/hero-list.component');
 var loader;
 ///////// Can't get lazy loaded Heroes to work yet
 xdescribe('AppComponent & Lazy Loading', function () {

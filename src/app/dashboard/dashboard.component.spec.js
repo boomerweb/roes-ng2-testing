@@ -1,13 +1,12 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var testing_1 = require("@angular/core/testing");
-var testing_2 = require("../../testing");
-var model_1 = require("../model");
-var testing_3 = require("../model/testing");
-var platform_browser_1 = require("@angular/platform-browser");
-var router_1 = require("@angular/router");
-var dashboard_component_1 = require("./dashboard.component");
-var dashboard_module_1 = require("./dashboard.module");
+var testing_1 = require('@angular/core/testing');
+var testing_2 = require('../../testing');
+var model_1 = require('../model');
+var testing_3 = require('../model/testing');
+var platform_browser_1 = require('@angular/platform-browser');
+var router_1 = require('@angular/router');
+var dashboard_component_1 = require('./dashboard.component');
+var dashboard_module_1 = require('./dashboard.module');
 var RouterStub = (function () {
     function RouterStub() {
     }
@@ -33,7 +32,7 @@ describe('DashboardComponent (deep)', function () {
     }
 });
 ////////  Shallow ////////////////
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
 describe('DashboardComponent (shallow)', function () {
     beforeEach(function () {
         testing_1.TestBed.configureTestingModule({

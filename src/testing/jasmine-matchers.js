@@ -1,6 +1,5 @@
 /// <reference path="./jasmine-matchers.d.ts" />
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 ////  Jasmine Custom Matchers ////
 // Be sure to extend jasmine-matchers.d.ts when adding matchers
 function addMatchers() {

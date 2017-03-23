@@ -8,9 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var model_1 = require("../model");
+var core_1 = require('@angular/core');
+var model_1 = require('../model');
 var HeroDetailService = (function () {
     function HeroDetailService(heroService) {
         this.heroService = heroService;
@@ -27,11 +26,11 @@ var HeroDetailService = (function () {
     HeroDetailService.prototype.saveHero = function (hero) {
         return this.heroService.updateHero(hero);
     };
+    HeroDetailService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [model_1.HeroService])
+    ], HeroDetailService);
     return HeroDetailService;
 }());
-HeroDetailService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [model_1.HeroService])
-], HeroDetailService);
 exports.HeroDetailService = HeroDetailService;
 //# sourceMappingURL=hero-detail.service.js.map

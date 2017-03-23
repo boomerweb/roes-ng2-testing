@@ -1,8 +1,7 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var hero_detail_component_1 = require("./hero-detail.component");
-var model_1 = require("../model");
-var testing_1 = require("../../testing");
+var hero_detail_component_1 = require('./hero-detail.component');
+var model_1 = require('../model');
+var testing_1 = require('../../testing');
 //////////  Tests  ////////////////////
 describe('HeroDetailComponent - no TestBed', function () {
     var activatedRoute;

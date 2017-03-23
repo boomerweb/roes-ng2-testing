@@ -1,6 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var hero_1 = require("./hero");
+var hero_1 = require('./hero');
 describe('Hero', function () {
     it('has name', function () {
         var hero = new hero_1.Hero(1, 'Super Cat');

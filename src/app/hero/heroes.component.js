@@ -8,14 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
+var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var http_hero_service_1 = require("../model/http-hero.service");
-require("rxjs/add/observable/throw");
-require("rxjs/add/operator/do");
-require("rxjs/add/operator/catch");
-require("rxjs/add/operator/map");
+require('rxjs/add/observable/throw');
+require('rxjs/add/operator/do');
+require('rxjs/add/operator/catch');
+require('rxjs/add/operator/map');
 var HeroesComponent = (function () {
     /**
      * Maakt een heroservice instantie aan bij initialisatie van de main app component
@@ -71,17 +70,16 @@ var HeroesComponent = (function () {
         this.heroService.addHero(name)
             .subscribe(function (hero) { return _this.heroes.push(hero); }, function (error) { return _this.errorMessage = error; });
     };
+    HeroesComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'my-heroes',
+            templateUrl: './heroes.component.html',
+            styleUrls: ['./heroes.component.css']
+        }), 
+        __metadata('design:paramtypes', [http_hero_service_1.HttpHeroService, router_1.Router])
+    ], HeroesComponent);
     return HeroesComponent;
 }());
-HeroesComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'my-heroes',
-        templateUrl: './heroes.component.html',
-        styleUrls: ['./heroes.component.css']
-    }),
-    __metadata("design:paramtypes", [http_hero_service_1.HttpHeroService,
-        router_1.Router])
-], HeroesComponent);
 exports.HeroesComponent = HeroesComponent;
 //# sourceMappingURL=heroes.component.js.map

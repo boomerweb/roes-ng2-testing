@@ -14,7 +14,10 @@ import 'rxjs/add/operator/map';
 export class HttpHeroService {
   private _heroesUrl = 'app/heroes';  // URL to web api
   private headers = new Headers({'Content-Type': 'application/json'});
+
+
   constructor (private http: Http) {}
+
 
   delete(id: number): Promise<void> {
       const url = `${this._heroesUrl}/${id}`;

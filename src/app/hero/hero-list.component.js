@@ -8,10 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var model_1 = require("../model");
+var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
+var model_1 = require('../model');
 var HeroListComponent = (function () {
     function HeroListComponent(router, heroService) {
         this.router = router;
@@ -24,17 +23,16 @@ var HeroListComponent = (function () {
         this.selectedHero = hero;
         this.router.navigate(['../heroes', this.selectedHero.id]);
     };
+    HeroListComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'app-heroes',
+            templateUrl: './hero-list.component.html',
+            styleUrls: ['./hero-list.component.css']
+        }), 
+        __metadata('design:paramtypes', [router_1.Router, model_1.HeroService])
+    ], HeroListComponent);
     return HeroListComponent;
 }());
-HeroListComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'app-heroes',
-        templateUrl: './hero-list.component.html',
-        styleUrls: ['./hero-list.component.css']
-    }),
-    __metadata("design:paramtypes", [router_1.Router,
-        model_1.HeroService])
-], HeroListComponent);
 exports.HeroListComponent = HeroListComponent;
 //# sourceMappingURL=hero-list.component.js.map

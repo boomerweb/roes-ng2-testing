@@ -1,8 +1,7 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var testing_1 = require("@angular/core/testing");
-var platform_browser_1 = require("@angular/platform-browser");
-var banner_component_1 = require("./banner.component");
+var testing_1 = require('@angular/core/testing');
+var platform_browser_1 = require('@angular/platform-browser');
+var banner_component_1 = require('./banner.component');
 describe('BannerComponent (templateUrl)', function () {
     var comp;
     var fixture;

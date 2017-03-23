@@ -2,10 +2,9 @@
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-Object.defineProperty(exports, "__esModule", { value: true });
-var testing_1 = require("@angular/core/testing");
-__export(require("./jasmine-matchers"));
-__export(require("./router-stubs"));
+var testing_1 = require('@angular/core/testing');
+__export(require('./jasmine-matchers'));
+__export(require('./router-stubs'));
 ///// Short utilities /////
 /** Wait a tick, then detect changes */
 function advance(f) {

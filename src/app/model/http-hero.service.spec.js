@@ -1,14 +1,13 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var testing_1 = require("@angular/core/testing");
-var testing_2 = require("@angular/http/testing");
-var http_1 = require("@angular/http");
-var Observable_1 = require("rxjs/Observable");
-require("rxjs/add/observable/of");
-require("rxjs/add/operator/catch");
-require("rxjs/add/operator/do");
-require("rxjs/add/operator/toPromise");
-var http_hero_service_1 = require("./http-hero.service");
+var testing_1 = require('@angular/core/testing');
+var testing_2 = require('@angular/http/testing');
+var http_1 = require('@angular/http');
+var Observable_1 = require('rxjs/Observable');
+require('rxjs/add/observable/of');
+require('rxjs/add/operator/catch');
+require('rxjs/add/operator/do');
+require('rxjs/add/operator/toPromise');
+var http_hero_service_1 = require('./http-hero.service');
 var makeHeroData = function () { return [
     { id: 1, name: 'Windstorm' },
     { id: 2, name: 'Bombasto' },

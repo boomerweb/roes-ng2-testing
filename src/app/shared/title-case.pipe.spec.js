@@ -1,6 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var title_case_pipe_1 = require("./title-case.pipe");
+var title_case_pipe_1 = require('./title-case.pipe');
 describe('TitleCasePipe', function () {
     // This pipe is a pure, stateless function so no need for BeforeEach
     var pipe = new title_case_pipe_1.TitleCasePipe();

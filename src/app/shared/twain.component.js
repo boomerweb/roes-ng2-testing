@@ -8,9 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var twain_service_1 = require("./twain.service");
+var core_1 = require('@angular/core');
+var twain_service_1 = require('./twain.service');
 var TwainComponent = (function () {
     function TwainComponent(twainService) {
         this.twainService = twainService;
@@ -20,14 +19,14 @@ var TwainComponent = (function () {
         var _this = this;
         this.twainService.getQuote().then(function (quote) { return _this.quote = quote; });
     };
+    TwainComponent = __decorate([
+        core_1.Component({
+            selector: 'twain-quote',
+            template: '<p class="twain"><i>{{quote}}</i></p>'
+        }), 
+        __metadata('design:paramtypes', [twain_service_1.TwainService])
+    ], TwainComponent);
     return TwainComponent;
 }());
-TwainComponent = __decorate([
-    core_1.Component({
-        selector: 'twain-quote',
-        template: '<p class="twain"><i>{{quote}}</i></p>'
-    }),
-    __metadata("design:paramtypes", [twain_service_1.TwainService])
-], TwainComponent);
 exports.TwainComponent = TwainComponent;
 //# sourceMappingURL=twain.component.js.map
