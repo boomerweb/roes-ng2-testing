@@ -26,7 +26,7 @@ var DashboardComponent = (function () {
     DashboardComponent.prototype.gotoDetail = function (hero) {
         var url = "/heroes/" + hero.id;
         this.router.navigateByUrl(url);
-        //this.router.navigate(['/detail', this.selectedHero.id]);
+        console.log(this.f(1) === 50);
     };
     Object.defineProperty(DashboardComponent.prototype, "title", {
         get: function () {
@@ -37,6 +37,12 @@ var DashboardComponent = (function () {
         enumerable: true,
         configurable: true
     });
+    DashboardComponent.prototype.f = function (x, y, z) {
+        if (y === void 0) { y = 7; }
+        if (z === void 0) { z = 42; }
+        console.log(x + y);
+        return x + y + z;
+    };
     return DashboardComponent;
 }());
 DashboardComponent = __decorate([

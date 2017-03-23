@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { Hero } from '../model';
-import {Router} from "@angular/router";
 
 @Component({
   moduleId: module.id,

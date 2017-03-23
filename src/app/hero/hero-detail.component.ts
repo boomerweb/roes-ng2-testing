@@ -1,13 +1,10 @@
 /* tslint:disable:member-ordering */
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router }   from '@angular/router';
-
-import { Location }                 from '@angular/common';
-
+import { ActivatedRoute, Router } from '@angular/router';
 
 import 'rxjs/add/operator/map';
 
-import { Hero }              from '../model';
+import { Hero } from '../model';
 import { HeroDetailService } from './hero-detail.service';
 
 @Component({
@@ -18,7 +15,6 @@ import { HeroDetailService } from './hero-detail.service';
   providers:  [ HeroDetailService ]
 })
 export class HeroDetailComponent implements OnInit {
-    //private location: Location
   constructor(
     private heroDetailService: HeroDetailService,
     private route:  ActivatedRoute,
@@ -34,7 +30,6 @@ export class HeroDetailComponent implements OnInit {
   }
 
   goBack(): void {
-    //this.location.back();
       this.router.navigate(['../'], {relativeTo: this.route});
   }
 

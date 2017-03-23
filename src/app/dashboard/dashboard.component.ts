@@ -11,7 +11,6 @@ import { Hero, HeroService } from '../model';
 export class DashboardComponent implements OnInit {
 
   heroes: Hero[] = [];
-  selectedHero: Hero;
 
   constructor(
     private router: Router,
@@ -23,15 +22,20 @@ export class DashboardComponent implements OnInit {
       .then(heroes => this.heroes = heroes.slice(1, 5));
   }
 
-  gotoDetail(hero : Hero) {
-    let url = `/heroes/${hero.id}`;
+  gotoDetail(hero: Hero) {
+    const url = `/heroes/${hero.id}`;
     this.router.navigateByUrl(url);
-    //this.router.navigate(['/detail', this.selectedHero.id]);
+    console.log(this.f(1) === 50);
   }
 
   get title() {
-    let cnt = this.heroes.length;
+    const cnt = this.heroes.length;
     return cnt === 0 ? 'No Heroes' :
       cnt === 1 ? 'Top Hero' :  `Top ${cnt} Heroes`;
+  }
+
+  f (x, y = 7, z = 42) {
+    console.log(x + y);
+  return x + y + z;
   }
 }

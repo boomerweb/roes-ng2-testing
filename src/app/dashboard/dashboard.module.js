@@ -19,7 +19,7 @@ var http_1 = require("@angular/http");
 var routes = [
     { path: 'dashboard', component: dashboard_component_1.DashboardComponent },
 ];
-//van declarations ,HeroDetailComponent, HeroesComponent, HeroSearchComponent
+// van declarations ,HeroDetailComponent, HeroesComponent, HeroSearchComponent
 var DashboardModule = (function () {
     function DashboardModule() {
     }

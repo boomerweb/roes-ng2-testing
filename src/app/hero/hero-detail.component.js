@@ -16,7 +16,6 @@ require("rxjs/add/operator/map");
 var model_1 = require("../model");
 var hero_detail_service_1 = require("./hero-detail.service");
 var HeroDetailComponent = (function () {
-    //private location: Location
     function HeroDetailComponent(heroDetailService, route, router) {
         this.heroDetailService = heroDetailService;
         this.route = route;
@@ -28,7 +27,6 @@ var HeroDetailComponent = (function () {
         this.route.params.subscribe(function (p) { return _this.getHero(p && p['id']); });
     };
     HeroDetailComponent.prototype.goBack = function () {
-        //this.location.back();
         this.router.navigate(['../'], { relativeTo: this.route });
     };
     HeroDetailComponent.prototype.getHero = function (id) {

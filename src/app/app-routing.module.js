@@ -10,7 +10,7 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var about_component_1 = require("./about.component");
 var dashboard_component_1 = require("./dashboard/dashboard.component");
-//{ path: 'detail/:id', component: HeroDetailComponent },
+// { path: 'detail/:id', component: HeroDetailComponent },
 var routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'about', component: about_component_1.AboutComponent },

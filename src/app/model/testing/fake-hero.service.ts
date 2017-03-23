@@ -1,13 +1,12 @@
 // re-export for tester convenience
-import {Http, Headers} from "@angular/http";
-export { Hero }        from '../hero';
-import { Hero }        from '../hero';
+export { Hero } from '../hero';
+import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 
 import 'rxjs/add/operator/toPromise';
-//import Promise = Q.Promise;
+// import Promise = Q.Promise;
 
-export var HEROES: Hero[] = [
+export const HEROES: Hero[] = [
   new Hero(41, 'Bob'),
   new Hero(42, 'Carol'),
   new Hero(43, 'Ted'),
@@ -26,7 +25,7 @@ export class FakeHeroService implements HeroService {
     if (typeof id === 'string') {
       id = parseInt(id as string, 10);
     }
-    let hero = this.heroes.find(h => h.id === id);
+    const hero = this.heroes.find(h => h.id === id);
     return this.lastPromise = Promise.resolve(hero);
   }
 
