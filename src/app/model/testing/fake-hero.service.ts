@@ -1,11 +1,12 @@
 // re-export for tester convenience
-export { Hero }        from '../hero';
-export { HeroService } from '../hero.service';
-
-import { Hero }        from '../hero';
+export { Hero } from '../hero';
+import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 
-export var HEROES: Hero[] = [
+import 'rxjs/add/operator/toPromise';
+// import Promise = Q.Promise;
+
+export const HEROES: Hero[] = [
   new Hero(41, 'Bob'),
   new Hero(42, 'Carol'),
   new Hero(43, 'Ted'),
@@ -16,6 +17,7 @@ export var HEROES: Hero[] = [
 
 export class FakeHeroService implements HeroService {
 
+
   heroes = HEROES.map(h => h.clone());
   lastPromise: Promise<any>;  // remember so we can spy on promise calls
 
@@ -23,7 +25,7 @@ export class FakeHeroService implements HeroService {
     if (typeof id === 'string') {
       id = parseInt(id as string, 10);
     }
-    let hero = this.heroes.find(h => h.id === id);
+    const hero = this.heroes.find(h => h.id === id);
     return this.lastPromise = Promise.resolve(hero);
   }
 

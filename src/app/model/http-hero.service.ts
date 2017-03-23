@@ -13,8 +13,19 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class HttpHeroService {
   private _heroesUrl = 'app/heroes';  // URL to web api
+  private headers = new Headers({'Content-Type': 'application/json'});
+
 
   constructor (private http: Http) {}
+
+
+  delete(id: number): Promise<void> {
+      const url = `${this._heroesUrl}/${id}`;
+      return this.http.delete(url, {headers: this.headers})
+          .toPromise()
+          .then(() => null)
+          .catch(this.handleError);
+    }
 
   getHeroes (): Observable<Hero[]> {
     return this.http.get(this._heroesUrl)
@@ -57,10 +68,24 @@ export class HttpHeroService {
     return body.data || { };
   }
 
-  private handleError (error: any) {
-    // In a real world app, we might send the error to remote logging infrastructure
-    let errMsg = error.message || 'Server error';
-    console.error(errMsg); // log to console instead
+  // private handleError (error: any) {
+  //   // In a real world app, we might send the error to remote logging infrastructure
+  //   let errMsg = error.message || 'Server error';
+  //   console.error(errMsg); // log to console instead
+  //   return Observable.throw(errMsg);
+  // }
+
+  private handleError (error: Response | any) {
+    // In a real world app, you might use a remote logging infrastructure
+    let errMsg: string;
+    if (error instanceof Response) {
+      const body = error.json() || '';
+      const err = body.error || JSON.stringify(body);
+      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+    } else {
+      errMsg = error.message ? error.message : error.toString();
+    }
+    console.error(errMsg);
     return Observable.throw(errMsg);
   }
 }

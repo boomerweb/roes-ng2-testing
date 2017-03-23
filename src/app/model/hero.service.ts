@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 
-import { Hero }       from './hero';
-import { HEROES }     from './test-heroes';
+import 'rxjs/add/operator/toPromise';
+
+import { Hero } from './hero';
+import {HEROES} from './test-heroes';
 
 @Injectable()
 /** Dummy HeroService. Pretend it makes real http requests */
@@ -15,7 +17,7 @@ export class HeroService {
       id = parseInt(id as string, 10);
     }
     return this.getHeroes().then(
-      heroes => heroes.find(hero => hero.id === id)
+        heroes => heroes.find(hero => hero.id === id)
     );
   }
 

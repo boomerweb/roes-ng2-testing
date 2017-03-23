@@ -4,7 +4,6 @@ import { Router }            from '@angular/router';
 import { Hero, HeroService } from '../model';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: [ './dashboard.component.css' ]
@@ -24,13 +23,19 @@ export class DashboardComponent implements OnInit {
   }
 
   gotoDetail(hero: Hero) {
-    let url = `/heroes/${hero.id}`;
+    const url = `/heroes/${hero.id}`;
     this.router.navigateByUrl(url);
+    console.log(this.f(1) === 50);
   }
 
   get title() {
-    let cnt = this.heroes.length;
+    const cnt = this.heroes.length;
     return cnt === 0 ? 'No Heroes' :
       cnt === 1 ? 'Top Hero' :  `Top ${cnt} Heroes`;
+  }
+
+  f (x, y = 7, z = 42) {
+    console.log(x + y);
+  return x + y + z;
   }
 }

@@ -14,6 +14,8 @@ import { WelcomeComponent } from './welcome.component';
 
 import { DashboardModule }  from './dashboard/dashboard.module';
 import { SharedModule }     from './shared/shared.module';
+//import {HeroDetailComponent} from "./hero/hero-detail.component";
+//import {HeroesComponent} from "./hero/heroes.component";
 
 @NgModule({
   imports: [
@@ -23,7 +25,8 @@ import { SharedModule }     from './shared/shared.module';
     SharedModule
   ],
   providers:    [ HeroService, TwainService, UserService ],
-  declarations: [ AppComponent, AboutComponent, BannerComponent, WelcomeComponent ],
+  declarations: [ AppComponent, AboutComponent, BannerComponent, WelcomeComponent
+  ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

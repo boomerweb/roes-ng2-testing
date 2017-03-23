@@ -1,9 +1,10 @@
 /* tslint:disable:member-ordering */
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router }   from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import 'rxjs/add/operator/map';
 
-import { Hero }              from '../model';
+import { Hero } from '../model';
 import { HeroDetailService } from './hero-detail.service';
 
 @Component({
@@ -17,7 +18,8 @@ export class HeroDetailComponent implements OnInit {
   constructor(
     private heroDetailService: HeroDetailService,
     private route:  ActivatedRoute,
-    private router: Router) {
+    private router: Router
+    ) {
   }
 
   @Input() hero: Hero;
@@ -26,6 +28,11 @@ export class HeroDetailComponent implements OnInit {
     // get hero when `id` param changes
     this.route.params.subscribe(p => this.getHero(p && p['id']));
   }
+
+  goBack(): void {
+      this.router.navigate(['../'], {relativeTo: this.route});
+  }
+
 
   private getHero(id: string): void {
     // when no id or id===0, create new hero
@@ -43,8 +50,12 @@ export class HeroDetailComponent implements OnInit {
     });
   }
 
+  /**
+   * Sla een Hero op
+   * Ga daarna terug naar het vorige scherm.
+   */
   save(): void {
-    this.heroDetailService.saveHero(this.hero).then(() => this.gotoList());
+    this.heroDetailService.saveHero(this.hero).then(() => this.goBack());
   }
 
   cancel() { this.gotoList(); }
