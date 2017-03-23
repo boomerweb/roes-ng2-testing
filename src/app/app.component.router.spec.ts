@@ -45,11 +45,6 @@ describe('AppComponent & RouterTestingModule', () => {
     expectElementOf(DashboardHeroComponent);
   }));
 
-  it('should navigate to "Dashboard" immediately', fakeAsync(() => {
-    createComponent();
-    expect(location.path()).toEqual('', 'after initialNavigation()');
-    expectElementOf(DashboardHeroComponent);
-  }));
 
   it('should navigate to "About" on click', fakeAsync(() => {
     createComponent();

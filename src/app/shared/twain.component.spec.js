@@ -1,8 +1,9 @@
 "use strict";
-var testing_1 = require('@angular/core/testing');
-var platform_browser_1 = require('@angular/platform-browser');
-var twain_service_1 = require('./twain.service');
-var twain_component_1 = require('./twain.component');
+Object.defineProperty(exports, "__esModule", { value: true });
+var testing_1 = require("@angular/core/testing");
+var platform_browser_1 = require("@angular/platform-browser");
+var twain_service_1 = require("./twain.service");
+var twain_component_1 = require("./twain.component");
 describe('TwainComponent', function () {
     var comp;
     var fixture;

@@ -5,26 +5,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var testing_1 = require('@angular/core/testing');
-var platform_browser_1 = require('@angular/platform-browser');
-var core_1 = require('@angular/core');
-var core_2 = require('@angular/core');
-var app_component_1 = require('./app.component');
-var banner_component_1 = require('./banner.component');
-var testing_2 = require('../testing');
-var testing_3 = require('../testing');
+Object.defineProperty(exports, "__esModule", { value: true });
+var testing_1 = require("@angular/core/testing");
+var platform_browser_1 = require("@angular/platform-browser");
+var core_1 = require("@angular/core");
+var core_2 = require("@angular/core");
+var app_component_1 = require("./app.component");
+var banner_component_1 = require("./banner.component");
+var testing_2 = require("../testing");
+var testing_3 = require("../testing");
 var WelcomeStubComponent = (function () {
     function WelcomeStubComponent() {
     }
-    WelcomeStubComponent = __decorate([
-        core_2.Component({ selector: 'app-welcome', template: '' }), 
-        __metadata('design:paramtypes', [])
-    ], WelcomeStubComponent);
     return WelcomeStubComponent;
 }());
+WelcomeStubComponent = __decorate([
+    core_2.Component({ selector: 'app-welcome', template: '' })
+], WelcomeStubComponent);
 var comp;
 var fixture;
 describe('AppComponent & TestModule', function () {
@@ -62,8 +59,8 @@ describe('AppComponent & NO_ERRORS_SCHEMA', function () {
 //////// Testing w/ real root module //////
 // Tricky because we are disabling the router and its configuration
 // Better to use RouterTestingModule
-var app_module_1 = require('./app.module');
-var app_routing_module_1 = require('./app-routing.module');
+var app_module_1 = require("./app.module");
+var app_routing_module_1 = require("./app-routing.module");
 describe('AppComponent & AppModule', function () {
     beforeEach(testing_1.async(function () {
         testing_1.TestBed.configureTestingModule({

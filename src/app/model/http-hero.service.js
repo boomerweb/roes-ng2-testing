@@ -8,19 +8,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-var http_2 = require('@angular/http');
-var Observable_1 = require('rxjs/Observable');
-require('rxjs/add/observable/throw');
-require('rxjs/add/operator/do');
-require('rxjs/add/operator/catch');
-require('rxjs/add/operator/map');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+var http_2 = require("@angular/http");
+var Observable_1 = require("rxjs/Observable");
+require("rxjs/add/observable/throw");
+require("rxjs/add/operator/do");
+require("rxjs/add/operator/catch");
+require("rxjs/add/operator/map");
 var HttpHeroService = (function () {
     function HttpHeroService(http) {
         this.http = http;
         this._heroesUrl = 'app/heroes'; // URL to web api
+        this.headers = new http_2.Headers({ 'Content-Type': 'application/json' });
     }
+    HttpHeroService.prototype.delete = function (id) {
+        var url = this._heroesUrl + "/" + id;
+        return this.http.delete(url, { headers: this.headers })
+            .toPromise()
+            .then(function () { return null; })
+            .catch(this.handleError);
+    };
     HttpHeroService.prototype.getHeroes = function () {
         return this.http.get(this._heroesUrl)
             .map(this.extractData)
@@ -54,17 +63,31 @@ var HttpHeroService = (function () {
         var body = res.json();
         return body.data || {};
     };
+    // private handleError (error: any) {
+    //   // In a real world app, we might send the error to remote logging infrastructure
+    //   let errMsg = error.message || 'Server error';
+    //   console.error(errMsg); // log to console instead
+    //   return Observable.throw(errMsg);
+    // }
     HttpHeroService.prototype.handleError = function (error) {
-        // In a real world app, we might send the error to remote logging infrastructure
-        var errMsg = error.message || 'Server error';
-        console.error(errMsg); // log to console instead
+        // In a real world app, you might use a remote logging infrastructure
+        var errMsg;
+        if (error instanceof http_1.Response) {
+            var body = error.json() || '';
+            var err = body.error || JSON.stringify(body);
+            errMsg = error.status + " - " + (error.statusText || '') + " " + err;
+        }
+        else {
+            errMsg = error.message ? error.message : error.toString();
+        }
+        console.error(errMsg);
         return Observable_1.Observable.throw(errMsg);
     };
-    HttpHeroService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], HttpHeroService);
     return HttpHeroService;
 }());
+HttpHeroService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], HttpHeroService);
 exports.HttpHeroService = HttpHeroService;
 //# sourceMappingURL=http-hero.service.js.map

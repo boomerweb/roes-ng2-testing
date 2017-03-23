@@ -1,11 +1,12 @@
 "use strict";
-var testing_1 = require('@angular/core/testing');
-var platform_browser_1 = require('@angular/platform-browser');
-var testing_2 = require('../../testing');
-var model_1 = require('../model');
-var hero_detail_component_1 = require('./hero-detail.component');
-var hero_detail_service_1 = require('./hero-detail.service');
-var hero_module_1 = require('./hero.module');
+Object.defineProperty(exports, "__esModule", { value: true });
+var testing_1 = require("@angular/core/testing");
+var platform_browser_1 = require("@angular/platform-browser");
+var testing_2 = require("../../testing");
+var model_1 = require("../model");
+var hero_detail_component_1 = require("./hero-detail.component");
+var hero_detail_service_1 = require("./hero-detail.service");
+var hero_module_1 = require("./hero.module");
 ////// Testing Vars //////
 var activatedRoute;
 var comp;
@@ -88,8 +89,8 @@ function overrideSetup() {
     }));
 }
 ////////////////////
-var testing_3 = require('../model/testing');
-var model_2 = require('../model');
+var testing_3 = require("../model/testing");
+var model_2 = require("../model");
 var firstHero = testing_3.HEROES[0];
 function heroModuleSetup() {
     beforeEach(testing_1.async(function () {
@@ -178,8 +179,8 @@ function heroModuleSetup() {
     });
 }
 /////////////////////
-var forms_1 = require('@angular/forms');
-var title_case_pipe_1 = require('../shared/title-case.pipe');
+var forms_1 = require("@angular/forms");
+var title_case_pipe_1 = require("../shared/title-case.pipe");
 function formsModuleSetup() {
     beforeEach(testing_1.async(function () {
         testing_1.TestBed.configureTestingModule({
@@ -202,7 +203,7 @@ function formsModuleSetup() {
     }));
 }
 ///////////////////////
-var shared_module_1 = require('../shared/shared.module');
+var shared_module_1 = require("../shared/shared.module");
 function sharedModuleSetup() {
     beforeEach(testing_1.async(function () {
         testing_1.TestBed.configureTestingModule({

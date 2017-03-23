@@ -11,21 +11,16 @@ describe('HeroDetailComponent - no TestBed', () => {
   let expectedHero: Hero;
   let hds: any;
   let router: any;
-  let location: any;
-  let back: any;
   beforeEach( done => {
     expectedHero = new Hero(42, 'Bubba');
     activatedRoute = new ActivatedRouteStub();
     activatedRoute.testParams = { id: expectedHero.id };
 
     router = jasmine.createSpyObj('router', ['navigate']);
-    location = new Location();
-    back = location.goBack();
     hds = jasmine.createSpyObj('HeroDetailService', ['getHero', 'saveHero']);
     hds.getHero.and.returnValue(Promise.resolve(expectedHero));
     hds.saveHero.and.returnValue(Promise.resolve(expectedHero));
-
-    comp = new HeroDetailComponent(hds, <any> activatedRoute, router, back);
+    comp = new HeroDetailComponent(hds, <any> activatedRoute, router);
     comp.ngOnInit();
 
     // OnInit calls HDS.getHero; wait for it to get the fake hero

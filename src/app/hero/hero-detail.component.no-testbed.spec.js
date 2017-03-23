@@ -1,7 +1,8 @@
 "use strict";
-var hero_detail_component_1 = require('./hero-detail.component');
-var model_1 = require('../model');
-var testing_1 = require('../../testing');
+Object.defineProperty(exports, "__esModule", { value: true });
+var hero_detail_component_1 = require("./hero-detail.component");
+var model_1 = require("../model");
+var testing_1 = require("../../testing");
 //////////  Tests  ////////////////////
 describe('HeroDetailComponent - no TestBed', function () {
     var activatedRoute;
@@ -9,19 +10,15 @@ describe('HeroDetailComponent - no TestBed', function () {
     var expectedHero;
     var hds;
     var router;
-    var location;
-    var back;
     beforeEach(function (done) {
         expectedHero = new model_1.Hero(42, 'Bubba');
         activatedRoute = new testing_1.ActivatedRouteStub();
         activatedRoute.testParams = { id: expectedHero.id };
         router = jasmine.createSpyObj('router', ['navigate']);
-        location = new Location();
-        back = location.goBack();
         hds = jasmine.createSpyObj('HeroDetailService', ['getHero', 'saveHero']);
         hds.getHero.and.returnValue(Promise.resolve(expectedHero));
         hds.saveHero.and.returnValue(Promise.resolve(expectedHero));
-        comp = new hero_detail_component_1.HeroDetailComponent(hds, activatedRoute, router, back);
+        comp = new hero_detail_component_1.HeroDetailComponent(hds, activatedRoute, router);
         comp.ngOnInit();
         // OnInit calls HDS.getHero; wait for it to get the fake hero
         hds.getHero.calls.first().returnValue.then(done);

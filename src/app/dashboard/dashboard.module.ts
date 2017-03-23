@@ -16,14 +16,15 @@ import {HttpModule} from "@angular/http";
 const routes: Routes =  [
   { path: 'dashboard',  component: DashboardComponent },
 ];
-
+//van declarations ,HeroDetailComponent, HeroesComponent, HeroSearchComponent
 @NgModule({
   imports:      [
     SharedModule,
     HttpModule,
+    RouterModule.forChild(routes),
     InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   providers: [ HeroService ],
-  declarations: [ DashboardComponent, DashboardHeroComponent,HeroDetailComponent, HeroesComponent, HeroSearchComponent ]
+  declarations: [ DashboardComponent, DashboardHeroComponent, HeroSearchComponent]
 })
 export class DashboardModule { }

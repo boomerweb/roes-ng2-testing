@@ -8,9 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var model_1 = require('../model');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var model_1 = require("../model");
 var DashboardComponent = (function () {
     function DashboardComponent(router, heroService) {
         this.router = router;
@@ -22,8 +23,10 @@ var DashboardComponent = (function () {
         this.heroService.getHeroes()
             .then(function (heroes) { return _this.heroes = heroes.slice(1, 5); });
     };
-    DashboardComponent.prototype.gotoDetail = function () {
-        this.router.navigate(['/detail', this.selectedHero.id]);
+    DashboardComponent.prototype.gotoDetail = function (hero) {
+        var url = "/heroes/" + hero.id;
+        this.router.navigateByUrl(url);
+        //this.router.navigate(['/detail', this.selectedHero.id]);
     };
     Object.defineProperty(DashboardComponent.prototype, "title", {
         get: function () {
@@ -34,16 +37,16 @@ var DashboardComponent = (function () {
         enumerable: true,
         configurable: true
     });
-    DashboardComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'app-dashboard',
-            templateUrl: './dashboard.component.html',
-            styleUrls: ['./dashboard.component.css']
-        }), 
-        __metadata('design:paramtypes', [router_1.Router, model_1.HeroService])
-    ], DashboardComponent);
     return DashboardComponent;
 }());
+DashboardComponent = __decorate([
+    core_1.Component({
+        selector: 'app-dashboard',
+        templateUrl: './dashboard.component.html',
+        styleUrls: ['./dashboard.component.css']
+    }),
+    __metadata("design:paramtypes", [router_1.Router,
+        model_1.HeroService])
+], DashboardComponent);
 exports.DashboardComponent = DashboardComponent;
 //# sourceMappingURL=dashboard.component.js.map

@@ -4,7 +4,6 @@ import { Router }            from '@angular/router';
 import { Hero, HeroService } from '../model';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: [ './dashboard.component.css' ]
@@ -24,8 +23,10 @@ export class DashboardComponent implements OnInit {
       .then(heroes => this.heroes = heroes.slice(1, 5));
   }
 
-  gotoDetail() {
-    this.router.navigate(['/detail', this.selectedHero.id]);
+  gotoDetail(hero : Hero) {
+    let url = `/heroes/${hero.id}`;
+    this.router.navigateByUrl(url);
+    //this.router.navigate(['/detail', this.selectedHero.id]);
   }
 
   get title() {

@@ -18,15 +18,15 @@ import { HeroDetailService } from './hero-detail.service';
   providers:  [ HeroDetailService ]
 })
 export class HeroDetailComponent implements OnInit {
-  @Input() hero: Hero;
-
+    //private location: Location
   constructor(
     private heroDetailService: HeroDetailService,
     private route:  ActivatedRoute,
-    private router: Router,
-    private location: Location) {
+    private router: Router
+    ) {
   }
 
+  @Input() hero: Hero;
 
   ngOnInit(): void {
     // get hero when `id` param changes
@@ -34,7 +34,8 @@ export class HeroDetailComponent implements OnInit {
   }
 
   goBack(): void {
-    this.location.back();
+    //this.location.back();
+      this.router.navigate(['../'], {relativeTo: this.route});
   }
 
 

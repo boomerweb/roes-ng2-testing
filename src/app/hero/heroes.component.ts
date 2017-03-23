@@ -2,8 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from '../model/hero';
 import { HeroService } from '../model/hero.service';
 import { Router } from '@angular/router';
+import {HttpHeroService} from "../model/http-hero.service";
 
-
+import { Observable }     from 'rxjs/Observable';
+import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
 @Component({
     moduleId: module.id,
     selector: 'my-heroes',
@@ -13,25 +18,35 @@ import { Router } from '@angular/router';
 
 
 export class HeroesComponent implements OnInit {
+    errorMessage: string;
+
     heroes: Hero[];
     selectedHero: Hero;
+    mode = 'Observable';
 
     /**
      * Maakt een heroservice instantie aan bij initialisatie van de main app component
      * @param heroService
      */
     constructor(
-        private heroService: HeroService,
+        private heroService: HttpHeroService,
         private router: Router) { }
 
 
-    ngOnInit(): void {this.getHeroes(); }
+    ngOnInit() {this.getHeroes(); }
 
     /**
      * Haalt alle heroes op
      */
-    getHeroes(): void {
-        this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+    // getHeroes(): void {
+    //     this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+    // }
+
+    getHeroes() {
+        this.heroService.getHeroes()
+            .subscribe(
+                heroes => this.heroes = heroes,
+                error =>  this.errorMessage = <any>error);
     }
 
 
@@ -60,17 +75,26 @@ export class HeroesComponent implements OnInit {
         console.log(this.selectedHero);
     }
 
-    /**
-     * Voeg een hero toe
-     * @param name
-     */
-    add(name: string): void {
-        name = name.trim();
+    add(name: string) {
         if (!name) { return; }
-        this.heroService.create(name)
-            .then(hero => {
-                this.heroes.push(hero);
-                this.selectedHero = null;
-            });
+        this.heroService.addHero(name)
+            .subscribe(
+                hero  => this.heroes.push(hero),
+                error =>  this.errorMessage = <any>error);
     }
+
+
+    // /**
+    //  * Voeg een hero toe
+    //  * @param name
+    //  */
+    // add(name: string): void {
+    //     name = name.trim();
+    //     if (!name) { return; }
+    //     this.heroService.addHero(name)
+    //         .then(hero => {
+    //             this.heroes.push(hero);
+    //             this.selectedHero = null;
+    //         });
+    // }
 }

@@ -12,29 +12,7 @@ import {Router} from "@angular/router";
 export class DashboardHeroComponent {
   @Input() hero: Hero;
   @Output() selected = new EventEmitter<Hero>();
-  selectedHero: Hero;
-
-  constructor(private router: Router) {
-  }
-
-
-  /**
-   * navigeer naar detail pagina van een hero
-   */
-  gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedHero.id]);
-  }
-
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-    this.gotoDetail();
-  }
-
-  click() {
-    let x = this.selected.mapTo(hero => hero as Hero);
-    console.log(x);
-    //this.selected.emit(this.hero); }
-  }
+  click() { this.selected.emit(this.hero); }
 }
 
 

@@ -14,8 +14,8 @@ import { WelcomeComponent } from './welcome.component';
 
 import { DashboardModule }  from './dashboard/dashboard.module';
 import { SharedModule }     from './shared/shared.module';
-import {HeroDetailComponent} from "./hero/hero-detail.component";
-import {HeroesComponent} from "./hero/heroes.component";
+//import {HeroDetailComponent} from "./hero/hero-detail.component";
+//import {HeroesComponent} from "./hero/heroes.component";
 
 @NgModule({
   imports: [
