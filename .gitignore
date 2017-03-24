@@ -6,7 +6,6 @@
 
 # dependencies
 /node_modules
-node_modules
 
 
 # IDEs and editors
@@ -36,7 +35,6 @@ testem.log
 
 # e2e
 /e2e/*.js
-/e2e/*.map
 
 #System Files
 .DS_Store
@@ -55,5 +53,3 @@ src/**.js
 /.editorconfig
 /src/app/model/testing/index.js
 /src/app/model/testing/fake-hero.service.js
-/src/app/model/client.js
-/src/app/model/client.js.map
