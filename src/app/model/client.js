@@ -1,5 +1,6 @@
-//import { randomstring } from 'randomstring/lib/randomstring.js';
+// import { randomstring } from 'randomstring/lib/randomstring.js';
 "use strict";
+// import {and} from "@angular/router/src/utils/collection";
 /**
  * @property Number id
  * @property String voornaam
@@ -17,7 +18,6 @@
  */
 var Client = (function () {
     /**
-     * \
      * @param id
      * @param voornaam
      * @param achternaam
@@ -73,10 +73,11 @@ var Client = (function () {
      * @returns {string}
      */
     Client.prototype.makeId = function () {
-        var text = "";
-        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        for (var i = 0; i < 4; i++)
+        var text = '';
+        var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        for (var i = 0; i < 4; i++) {
             text += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
         return text;
     };
     Client.prototype.neppeAchternaam = function () {
