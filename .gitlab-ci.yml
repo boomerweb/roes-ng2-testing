@@ -1,8 +1,7 @@
-language: node_js
+language: node_js:6
+
 node_js:
-  - 4
-  - 5
-  - 6
+  - '6'
 
 sudo: false
 
@@ -26,7 +25,4 @@ before_script:
 - ng build
 
 
-cache:
-  directories: node_modules
-
-script: karma start config/karma.conf.js --single-run
+script: karma start ./karma.conf.js --single-run
