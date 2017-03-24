@@ -1,8 +1,9 @@
 "use strict";
-var dashboard_component_1 = require('./dashboard.component');
-var model_1 = require('../model');
-var testing_1 = require('../../testing');
-var testing_2 = require('../model/testing');
+Object.defineProperty(exports, "__esModule", { value: true });
+var dashboard_component_1 = require("./dashboard.component");
+var model_1 = require("../model");
+var testing_1 = require("../../testing");
+var testing_2 = require("../model/testing");
 var FakeRouter = (function () {
     function FakeRouter() {
     }

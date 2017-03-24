@@ -1,9 +1,10 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // re-export for tester convenience
-var hero_1 = require('../hero');
+var hero_1 = require("../hero");
 exports.Hero = hero_1.Hero;
-var hero_2 = require('../hero');
-require('rxjs/add/operator/toPromise');
+var hero_2 = require("../hero");
+require("rxjs/add/operator/toPromise");
 // import Promise = Q.Promise;
 exports.HEROES = [
     new hero_2.Hero(41, 'Bob'),

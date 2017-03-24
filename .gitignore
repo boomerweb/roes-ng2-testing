@@ -6,6 +6,8 @@
 
 # dependencies
 /node_modules
+node_modules
+
 
 # IDEs and editors
 /.idea
@@ -39,3 +41,15 @@ testem.log
 #System Files
 .DS_Store
 Thumbs.db
+src/app/team/
+**/**/**.map
+src/app/dashboard/**.js
+src/app/hero/**.js
+src/app/model/**.js
+src/app/shared/**.js
+src/environments/**.js
+src/testing/**.js
+src/app/**.js
+src/**.js
+!src/browser-test-shim.js
+/.editorconfig

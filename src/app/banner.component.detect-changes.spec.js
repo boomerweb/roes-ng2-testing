@@ -1,9 +1,10 @@
 "use strict";
-var testing_1 = require('@angular/core/testing');
-var testing_2 = require('@angular/core/testing');
-var testing_3 = require('@angular/core/testing');
-var platform_browser_1 = require('@angular/platform-browser');
-var banner_component_1 = require('./banner.component');
+Object.defineProperty(exports, "__esModule", { value: true });
+var testing_1 = require("@angular/core/testing");
+var testing_2 = require("@angular/core/testing");
+var testing_3 = require("@angular/core/testing");
+var platform_browser_1 = require("@angular/platform-browser");
+var banner_component_1 = require("./banner.component");
 describe('BannerComponent (AutoChangeDetect)', function () {
     var comp;
     var fixture;

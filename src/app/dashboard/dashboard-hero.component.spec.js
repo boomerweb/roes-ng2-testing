@@ -5,14 +5,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var testing_1 = require('@angular/core/testing');
-var platform_browser_1 = require('@angular/platform-browser');
-var testing_2 = require('../../testing');
-var hero_1 = require('../model/hero');
-var dashboard_hero_component_1 = require('./dashboard-hero.component');
+Object.defineProperty(exports, "__esModule", { value: true });
+var testing_1 = require("@angular/core/testing");
+var platform_browser_1 = require("@angular/platform-browser");
+var testing_2 = require("../../testing");
+var hero_1 = require("../model/hero");
+var dashboard_hero_component_1 = require("./dashboard-hero.component");
 beforeEach(testing_2.addMatchers);
 describe('DashboardHeroComponent when tested directly', function () {
     var comp;
@@ -81,18 +79,17 @@ describe('DashboardHeroComponent when inside a test host', function () {
     });
 });
 ////// Test Host Component //////
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var TestHostComponent = (function () {
     function TestHostComponent() {
         this.hero = new hero_1.Hero(42, 'Test Name');
     }
     TestHostComponent.prototype.onSelected = function (hero) { this.selectedHero = hero; };
-    TestHostComponent = __decorate([
-        core_1.Component({
-            template: "\n    <dashboard-hero  [hero]=\"hero\"  (selected)=\"onSelected($event)\"></dashboard-hero>"
-        }), 
-        __metadata('design:paramtypes', [])
-    ], TestHostComponent);
     return TestHostComponent;
 }());
+TestHostComponent = __decorate([
+    core_1.Component({
+        template: "\n    <dashboard-hero  [hero]=\"hero\"  (selected)=\"onSelected($event)\"></dashboard-hero>"
+    })
+], TestHostComponent);
 //# sourceMappingURL=dashboard-hero.component.spec.js.map

@@ -1,7 +1,7 @@
-//import { randomstring } from 'randomstring/lib/randomstring.js';
+// import { randomstring } from 'randomstring/lib/randomstring.js';
 
 
-import {and} from "@angular/router/src/utils/collection";
+// import {and} from "@angular/router/src/utils/collection";
 /**
  * @property Number id
  * @property String voornaam
@@ -18,8 +18,8 @@ import {and} from "@angular/router/src/utils/collection";
  * @property [Number, String] adresLijst
  */
 export class Client {
+
     /**
-     * \
      * @param id
      * @param voornaam
      * @param achternaam
@@ -52,8 +52,7 @@ export class Client {
         public telefoon = String,
         public postcode = String,
         public plaats = String,
-        public adresLijst = [Number, String])
-    {
+        public adresLijst = [Number, String]) {
 
         this.achternaam = (achternaam === '' ) ?  this.neppeAchternaam().toString() : this.achternaam;
     }
@@ -63,17 +62,19 @@ export class Client {
      * Maakt een unieke id
      * @returns {string}
      */
-    makeId(): String{
-            let text = "";
-            const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    makeId(): String {
+            let text = '';
+            const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
-            for( let i=0; i < 4; i++ )
+            for ( let i = 0; i < 4; i++ ) {
                 text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+            }
 
             return text;
     }
 
-    private neppeAchternaam(): String{
+    private neppeAchternaam(): String {
         const randomAchternaam = 'Demo' +  this.makeId();
         return randomAchternaam;
     };

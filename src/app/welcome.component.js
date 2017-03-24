@@ -8,8 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var model_1 = require('./model');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var model_1 = require("./model");
 var WelcomeComponent = (function () {
     function WelcomeComponent(userService) {
         this.userService = userService;
@@ -20,14 +21,14 @@ var WelcomeComponent = (function () {
             'Welcome, ' + this.userService.user.name :
             'Please log in.';
     };
-    WelcomeComponent = __decorate([
-        core_1.Component({
-            selector: 'app-welcome',
-            template: '<h3 class="welcome" ><i>{{welcome}}</i></h3>'
-        }), 
-        __metadata('design:paramtypes', [model_1.UserService])
-    ], WelcomeComponent);
     return WelcomeComponent;
 }());
+WelcomeComponent = __decorate([
+    core_1.Component({
+        selector: 'app-welcome',
+        template: '<h3 class="welcome" ><i>{{welcome}}</i></h3>'
+    }),
+    __metadata("design:paramtypes", [model_1.UserService])
+], WelcomeComponent);
 exports.WelcomeComponent = WelcomeComponent;
 //# sourceMappingURL=welcome.component.js.map

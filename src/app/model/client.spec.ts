@@ -12,14 +12,14 @@ describe('Client', () => {
     });
 
 
-    it('has a valid birthdate', () =>{
-       const client = new Client(1, 'Super Cat', 'Bad ass', new Date(2017,2,16));
+    it('has a valid birthdate', () => {
+       const client = new Client(1, 'Super Cat', 'Bad ass', new Date(2017, 2 , 16));
 
         jasmine.clock().install();
         jasmine.clock().mockDate(client.geboortedatum);
 
         jasmine.clock().tick(50); // zet de tijd handmatig 50 milli seconden vooruit zonder erop te wachten
-       expect(new Date().getTime()).toEqual(client.geboortedatum.getTime() + 50)
+       expect(new Date().getTime()).toEqual(client.geboortedatum.getTime() + 50);
     });
 
 
@@ -31,7 +31,7 @@ describe('Client', () => {
     });
 
 
-    it('gets a random name when no name is given', () => {
+    it('gets a random name when a empty string as name is given', () => {
        const client = new Client(1, 'jan', '', new Date());
 
        const clone = new Client(1, 'jan', '', new Date());
@@ -39,7 +39,7 @@ describe('Client', () => {
 
     });
 
-    it('Must have a name', () => {
+    it('Must have a name when no name is given', () => {
         const client = new Client(1);
         console.log(client);
         expect(client.voornaam).not.toBeNull();
@@ -47,7 +47,9 @@ describe('Client', () => {
 
 
 
- afterAll(()=>{
+ afterAll(() => {
      jasmine.clock().uninstall();
  });
+
+
 });

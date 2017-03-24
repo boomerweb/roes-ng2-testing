@@ -1,9 +1,10 @@
 "use strict";
-var core_1 = require('@angular/core');
-var testing_1 = require('@angular/core/testing');
-var platform_browser_1 = require('@angular/platform-browser');
-var about_component_1 = require('./about.component');
-var highlight_directive_1 = require('./shared/highlight.directive');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var testing_1 = require("@angular/core/testing");
+var platform_browser_1 = require("@angular/platform-browser");
+var about_component_1 = require("./about.component");
+var highlight_directive_1 = require("./shared/highlight.directive");
 var fixture;
 describe('AboutComponent (highlightDirective)', function () {
     beforeEach(function () {

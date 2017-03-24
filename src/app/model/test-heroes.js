@@ -1,5 +1,6 @@
 "use strict";
-var hero_1 = require('./hero');
+Object.defineProperty(exports, "__esModule", { value: true });
+var hero_1 = require("./hero");
 exports.HEROES = [
     new hero_1.Hero(11, 'Mr. Nice'),
     new hero_1.Hero(12, 'Narco'),

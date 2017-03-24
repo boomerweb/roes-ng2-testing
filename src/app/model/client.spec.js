@@ -1,5 +1,6 @@
 "use strict";
-var client_1 = require('./client');
+Object.defineProperty(exports, "__esModule", { value: true });
+var client_1 = require("./client");
 describe('Client', function () {
     it('has name', function () {
         var client = new client_1.Client(1, 'Super Cat');
@@ -21,12 +22,12 @@ describe('Client', function () {
         var clone = client.clone();
         expect(client).toEqual(clone);
     });
-    it('gets a random name when no name is given', function () {
+    it('gets a random name when a empty string as name is given', function () {
         var client = new client_1.Client(1, 'jan', '', new Date());
         var clone = new client_1.Client(1, 'jan', '', new Date());
         expect(client.achternaam).not.toEqual(clone.achternaam);
     });
-    it('Must have a name', function () {
+    it('Must have a name when no name is given', function () {
         var client = new client_1.Client(1);
         console.log(client);
         expect(client.voornaam).not.toBeNull();
