@@ -53,3 +53,5 @@ src/app/**.js
 src/**.js
 !src/browser-test-shim.js
 /.editorconfig
+/src/app/model/testing/index.js
+/src/app/model/testing/fake-hero.service.js
